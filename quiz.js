@@ -6,24 +6,19 @@ const answerSubmit = document.getElementById("submit-answer");
 
 const feedback = document.getElementById("feedback");
 
-let answer;
-
-answers.forEach((ele) => {
-  ele.addEventListener("click", (e) => {
-    if (e.target.value == 4) {
-      answer = true;
-    } else {
-      answer = false;
+function checkAnswer() {
+  const correctAnswer = "4";
+  let userAnswer;
+  answers.forEach((ele) => {
+    if (ele.checked) {
+      userAnswer = ele.value;
     }
   });
-});
-
-answerSubmit.addEventListener("click", () => {
-  if (answer === true) {
-    feedback.innerHTML = "That's Correct";
-    feedback.style.color = "#37b24d";
-  } else if (answer === false) {
-    feedback.innerHTML = "Oops Wrong Answer";
-    feedback.style.color = "#f03e3e";
+  if (userAnswer === correctAnswer) {
+    feedback.innerHTML = "Correct! Well done.";
+  } else {
+    feedback.innerHTML = "That's incorrect. Try again!";
   }
-});
+}
+
+answerSubmit.addEventListener("click", checkAnswer);
