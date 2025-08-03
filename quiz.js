@@ -2,7 +2,7 @@ const answersContainer = document.getElementById("answers");
 
 const answers = answersContainer.querySelectorAll("input");
 
-const answerSubmit = document.getElementById("submit-answer");
+const submitAnswer = document.getElementById("submit-answer");
 
 const feedback = document.getElementById("feedback");
 
@@ -21,4 +21,4 @@ function checkAnswer() {
   }
 }
 
-answerSubmit.addEventListener("click", checkAnswer);
+submitAnswer.addEventListener("click", checkAnswer);
